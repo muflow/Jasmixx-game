@@ -39,7 +39,6 @@ A draft of the interface at [link](https://photos.app.goo.gl/AvNaZ9jvDxH97VQdA)
 
 
 
-
 ## Game states
 
 * __Start Screen__
@@ -48,6 +47,15 @@ A draft of the interface at [link](https://photos.app.goo.gl/AvNaZ9jvDxH97VQdA)
 
 * __Game Over Screen__
 
+## User Stories
+
+- The user can view a splash screen
+- The user can view a game screen
+- The user can view a game over screen
+- The user can move the player left and right with the direction arrows
+- The user can shoot with the space bar
+- The user can see that the player dies if he is hit once by the enemy
+- The user can see that the enemy dies if he is hit once by the player
 
 ## Backlog
 
