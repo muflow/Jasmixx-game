@@ -1,4 +1,8 @@
-class Enemies {
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+
+class Laser {
   constructor(x, y, width, height, color, velocity) {
     this.x = x;
     this.y = y;
@@ -7,7 +11,8 @@ class Enemies {
     this.color = color;
     this.velocity = velocity;
   }
-  drawEnemies() {
+
+  drawLaser() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -15,8 +20,9 @@ class Enemies {
   }
 
   update() {
-    this.drawEnemies();
+    this.drawLaser();
     this.x = this.x + this.velocity.x;
     this.y = this.y + this.velocity.y;
   }
+  
 }
