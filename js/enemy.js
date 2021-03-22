@@ -1,4 +1,4 @@
-class Laser {
+class Enemy {
   constructor(options) {
     this.x = options.x;
     this.y = options.y;
@@ -7,9 +7,16 @@ class Laser {
     this.color = "blue";
   }
 
-  _drawLaser(ctx){
+  _drawEnemy(ctx){
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+
+  _drop(){
+    // setInterval(function(){
+    // this.y = this.y  + 10;
+    //}, 300)
+    // 
   }
 
 }

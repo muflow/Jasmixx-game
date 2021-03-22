@@ -1,47 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let game;
+  console.log("DOM is loaded");
 
-  function printGameOver() {
-    let gameOver = document.getElementById('gameover');
-    let canvas = document.querySelector('#canvas');
-    canvas.style = 'display: none';
-    gameOver.style = 'display: block';
-  }
+  // 1.Cargo los elementos que voy a necesitar
+  const canvas = document.querySelector('#canvas');
+  const ctx = canvas.getContext('2d');
+  const jasmixxGame = new Game({
+    ctx: ctx,
+    canvasWidth: canvas.width
+  });
+  const game = document.getElementById('game');
+  const startButton = document.querySelector('#start');
+  const playButton = document.querySelector('#play');
+  const intro = document.getElementById('intro');
 
-  function generateSplashScreen() {
-    const intro = document.getElementById('intro');
-    intro.innerHTML = `
-    <div>
-      <button id="play" class="mb-2">Play</button>
-    </div>
-    `;
+  playButton.addEventListener("click", jasmixxGame.start()); 
+  // 2.Función para pintar game over en el DOM
+  // function printGameOver() {
+  //   let gameOver = document.getElementById('gameover');
+  //   canvas.style = 'display: none';
+  //   gameOver.style = 'display: block';
+  // }
 
-    const playButton = document.querySelector('#play');
-    playButton.addEventListener('click', () => {
-      intro.classList.add('hide');
-      const game = document.getElementById('game');
-      game.classList.remove('hide');
-      game.classList.add('show');
+  // // 3. Función para generar Splash screen
+  // function generateSplashScreen() {
+  //   intro.innerHTML = `
+  //   <div>
+  //     <button id="play" class="mb-2">Play</button>
+  //   </div>
+  //   `;
+  // };
+  // generateSplashScreen();
 
-      const startButton = game.querySelector('#start');
-      startButton.addEventListener('click', () => {
-        let canvas = game.querySelector('#canvas');
-        const ctx = canvas.getContext('2d');
-        const jasmixxGame = new Game(
-          {
-            ctx: ctx,
-            rows: canvas.width / 10,
-            columns: canvas.height / 10,
-            maxCells: 10,
-            player: new Player(200, 200, 30, 30, 'green'),
-          },
-          printGameOver
-        );
+  // // 4. Asigno a cada botón su función
+  // startButton.addEventListener('click', function(){
+  //             // 4.1. Muéstrame la pantalla de juego
+  //     intro.classList.add('hide');
+  //     game.classList.remove('hide');
+  //     game.classList.add('show');
+  // });
+  
 
-        jasmixxGame.start();
-      });
-    });
-  }
 
-  generateSplashScreen();
-});
+});   
+
