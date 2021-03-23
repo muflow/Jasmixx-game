@@ -5,33 +5,13 @@ class Game {
     x: options.canvasWidth / 2 - 20,
     y: 500
   });
-  //enemy
-  this.enemy = new Enemy({
-    x: 50,
-    y: 50
-  });
-  // bomb
-    this.bomb = new Bomb({
-    x: options.canvasWidth / 2 - 20,
-    y: 100
-  });
-  this.enemies = [];
-  this.bombs = [];
+  this.enemies = enemies;
+  this.bombs = bombs;
 }
 
-_generateEnemies(){
-  // loop de tantos enemigos como quieras
-  const enemy1 = new Enemy({ x: 50, y: 50});
-  const enemy2 = new Enemy({ x: 100, y:100});
-  this.enemies = [enemy1, enemy2];
-  this.enemies.forEach(enemy => enemy._drop());
-}
-
-_generateBombs(){
-  // Genero una nueva bomba
-  // alomejor puedo hacer una x random para que aparezcan en sitios diferentes cada ver que genero uno nuevo
-  // this.bomb = la bomba que genero;
-  // cuando la genero, la pinto (this.bomb._dropBomb())
+_dropBombs(){
+  console.log(this.bombs);
+  this.bombs.forEach(bomb => bomb._drop());
 }
 
 _assignControlstoKeys(){
@@ -62,10 +42,10 @@ _clean(){
 _update(){
  this._clean();
  this.player._drawPlayer(this.ctx);
- this.enemy._drawEnemy(this.ctx);
- this.bomb._drawBomb(this.ctx);
  this.player.lasers.forEach(laser => laser._drawLaser(this.ctx));
  this.enemies.forEach(enemy => enemy._drawEnemy(this.ctx));
+ this.bombs.forEach(bomb => bomb._drawBomb(this.ctx));
+//  console.log(this.bombs);
  //_draw las bombas
  //_checkCollisions()
  window.requestAnimationFrame(this._update.bind(this));
@@ -74,6 +54,7 @@ _update(){
 start(){
   this._assignControlstoKeys();
   console.log("Game starting", this);
+  setTimeout(this._dropBombs(), 1000);
   window.requestAnimationFrame(this._update.bind(this));
 }
 }

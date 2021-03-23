@@ -14,4 +14,11 @@ class Bomb {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fill();
     }
+
+    _drop(){
+        // Tendría que bajar (sumar a la Y) poco a poco
+        // setInterval
+        this.y = this.y + 60;
+        // Cuando this.y > 600 => clearInterval();
+    }
 }
