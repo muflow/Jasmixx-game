@@ -1,9 +1,19 @@
 class Game {
-  constructor(properties) {
-  this.ctx = properties.ctx;
+  constructor(options) {
+  this.ctx = options.ctx;
   this.player = new Player({
-    x: properties.canvasWidth / 2 - 20,
-    y: 500,
+    x: options.canvasWidth / 2 - 20,
+    y: 500
+  });
+  //enemy
+  this.enemy = new Enemy({
+    x: 50,
+    y: 50
+  });
+  // bomb
+    this.bomb = new Bomb({
+    x: options.canvasWidth / 2 - 20,
+    y: 100
   });
   this.enemies = [];
   this.bombs = [];
@@ -52,6 +62,8 @@ _clean(){
 _update(){
  this._clean();
  this.player._drawPlayer(this.ctx);
+ this.enemy._drawEnemy(this.ctx);
+ this.bomb._drawBomb(this.ctx);
  this.player.lasers.forEach(laser => laser._drawLaser(this.ctx));
  this.enemies.forEach(enemy => enemy._drawEnemy(this.ctx));
  //_draw las bombas

@@ -2,9 +2,9 @@ class Enemy {
   constructor(options) {
     this.x = options.x;
     this.y = options.y;
-    this.width = 10;
-    this.height = 10;
-    this.color = "blue";
+    this.width = 40;
+    this.height = 40;
+    this.color = "white";
   }
 
   _drawEnemy(ctx){
