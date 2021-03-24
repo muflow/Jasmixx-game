@@ -27,6 +27,7 @@ class Player {
       this.lasers.unshift(laser);
       console.log("I'm shooting");
       console.log(laser);
+      
       setInterval(function() {
         laser.y = laser.y - 30;
       }, 50);

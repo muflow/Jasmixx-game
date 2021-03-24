@@ -6,6 +6,7 @@ class Bomb {
         this.radius = 10;
         this.color = 'red'; //options.color;
         this.lasers = [];
+        this.weight = 4;
     }
 
     _drawBomb(ctx) {
@@ -16,9 +17,15 @@ class Bomb {
     }
 
     _drop(){
-        // Tendría que bajar (sumar a la Y) poco a poco
-        // setInterval
-        this.y = this.y + 60;
-        // Cuando this.y > 600 => clearInterval();
+      if (this.y > canvas.height) { // repeat the falling bomb every time te bomb exits the canvas
+            this.y = 260 - this.radius;
+            this.weight = 2;
+            this.x = Math.floor((Math.random() * 470) + 50);
+      }
+        this.weight += 0.05;
+        this.y += this.weight;
     }
+    // como borrar las bombas que salen del canvas?
+
+    
 }

@@ -45,7 +45,7 @@ const enemies = [
 ];
 
 const bombs = [
-  new Bomb({x: 50, y: -50}),
-  new Bomb({x: 400, y: -50}),
-  new Bomb({x: 200, y: -50}),
+  new Bomb({x: 70, y: -260}),
+  new Bomb({x: 270, y: -100}),
+  new Bomb({x: 520, y: -50}),
 ]
