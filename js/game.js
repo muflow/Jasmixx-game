@@ -5,8 +5,10 @@ class Game {
     x: options.canvasWidth / 2 - 20,
     y: 500
   });
+
   this.enemies = enemies;
   this.bombs = bombs;
+  
 }
 
 _dropBombs(){
@@ -31,6 +33,7 @@ _assignControlstoKeys(){
     }
 
 _checkCollisions() {
+ 
   // Tengo la x de this.player.x
   // Tengo la x de this.enemies (forEach = x)
 }// Compruebo las colisiones y pongo las consecuencias, puedo tner varios checkCollisions (si los quiro separar por bombas, enemies, laser, o tnr solo uno con todo)

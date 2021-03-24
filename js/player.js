@@ -5,7 +5,7 @@ class Player {
     this.y = properties.y; //canvas.height - this.height - 40;
     this.width = 40; //options.width;
     this.height = 40; //options.height;
-    this.color = 'green'; //options.color;
+    this.color = '#fecc2b'; //options.color;
     this.lasers = [];
     }
 
@@ -23,13 +23,13 @@ class Player {
     }
 
     shoot(){
-      const laser = new Laser({x: this.x, y: this.y - 10});
+      const laser = new Laser({x: this.x + 15, y: this.y - 10});
       this.lasers.unshift(laser);
       console.log("I'm shooting");
       console.log(laser);
       setInterval(function() {
-        laser.y = laser.y - 10;
-      }, 300);
+        laser.y = laser.y - 30;
+      }, 50);
     }
 
 }
