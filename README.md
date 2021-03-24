@@ -2,7 +2,7 @@
 
 ## The Story
 
-The game is a free reinterpretation of one of the most famous video games of all time 'Space Invaders'. Similar structure but different characters.
+The game is a free reinterpretation of one of the most famous video games of all time 'Space Invaders'. Similar structure but different characters. --
 
 Jasmixx is the story of a noob programmer who tries to get his code validated by a merciless test machine.
 
