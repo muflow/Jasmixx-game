@@ -7,12 +7,20 @@ class Game {
   });
   this.enemies = enemies;
   this.bombs = bombs;
+  this.bombIndex = 0; // Para empezar por la primera bomba
   }
 
-_dropBombs(){
-  console.log(this.bombs);
-  this.bombs.forEach(bomb => bomb._drop());
-  
+_startDroppingBombs(){
+  setTimeout(function() { // El setTimeOut esperará 2 segundos una vez empiezo el juego para lanzar la función de dentro
+      let interval = setInterval(function(){ // Guardo el setInterval en una variable para poderlo parar luego
+      this.bombs[this.bombIndex]._drop(); // Cada 4 segundos, lanza una bomba 
+      this.bombIndex++; // e incrementa el índice para lanzar la siguiente bomba en la siguiente iteración
+      console.log(`Bomb n. ${this.bombIndex} down`);
+      if (this.bombIndex === this.bombs.length){ // Cuando no haya más bombas, para
+        clearInterval(interval); 
+      };
+      }.bind(this), 4000);
+  }.bind(this), 2000);
 }
 
 _assignControlstoKeys(){
@@ -56,22 +64,18 @@ _clean(){
 
 _update(){
  this._clean();
- this._dropBombs();
  this.player._drawPlayer(this.ctx);
  this.player.lasers.forEach(laser => laser._drawLaser(this.ctx));
  this.enemies.forEach(enemy => enemy._drawEnemy(this.ctx));
  this.bombs.forEach(bomb => bomb._drawBomb(this.ctx));
  this._checkCollisions();
-//  console.log(this.bombs);
- //_draw las bombas
  //this._checkCollisions()
  window.requestAnimationFrame(this._update.bind(this));
 }
 
 start(){
   this._assignControlstoKeys();
-  console.log("Game starting", this);
-  setTimeout(this._dropBombs(), 1000);
+  this._startDroppingBombs();
   window.requestAnimationFrame(this._update.bind(this));
 }
 }

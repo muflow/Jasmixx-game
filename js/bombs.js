@@ -17,15 +17,13 @@ class Bomb {
     }
 
     _drop(){
-      if (this.y > canvas.height) { // repeat the falling bomb every time te bomb exits the canvas
-            this.y = 260 - this.radius;
-            this.weight = 2;
-            this.x = Math.floor((Math.random() * 470) + 50);
-      }
-        this.weight += 0.05;
-        this.y += this.weight;
-    }
-    // como borrar las bombas que salen del canvas?
-
-    
+      let fallinginterval = setInterval(function(){ // La bomba tiene que caer cada 70 ms
+          this.weight = 3;
+          this.weight += 0.05;
+          this.y += this.weight;
+          if (this.y > 650){
+            clearInterval(fallinginterval); // Cuando me salgo del canvas, paro
+          }
+      }.bind(this), 70);    
+    }    
 }
