@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.querySelector('#play');
   const intro = document.getElementById('intro');
 
+
   playButton.addEventListener("click", jasmixxGame.start()); 
+
+
   // 2.Función para pintar game over en el DOM
   // function printGameOver() {
   //   let gameOver = document.getElementById('gameover');
@@ -41,4 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-});  
+});   
+

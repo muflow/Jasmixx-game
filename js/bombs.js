@@ -24,6 +24,6 @@ class Bomb {
           if (this.y > 650){
             clearInterval(fallinginterval); // Cuando me salgo del canvas, paro
           }
-      }.bind(this), 70);    
+      }.bind(this), 10);    
     }    
 }
