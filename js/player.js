@@ -15,11 +15,17 @@ class Player {
     }  
 
     moveRight(){
-      this.x = this.x + 10;
+      this.x = this.x + 20;
+      if (this.x + this.width > canvas.width){
+            this.x = canvas.width - this.width;
+      }
     }
 
     moveLeft(){
-      this.x = this.x - 10;
+      this.x = this.x - 20;
+      if (this.x < 0){
+            this.x = 0;
+      }
     }
 
     shoot(){
