@@ -43,14 +43,30 @@ _assignControlstoKeys(){
       });
     }
 
+// _checkEnemyCollisions() { // Cheeck collision with the laser and then delete that enemy from the array
+//     for (let i = 0; i < this.player.lasers.length; i++){
+//       for (let e = 0; e < this.enemies.length; e++){
+//       if (this.player.lasers[i].x < this.enemies[e].x + this.enemies[e].width  && this.player.lasers[i].x + this.player.lasers[i].width  > this.enemies[e].x &&
+// 		    this.player.lasers[i].y < this.enemies[e].y + this.enemies[e].height && this.player.lasers[i].y + this.player.lasers[i].height > this.enemies[e].y) {
+//         const index = this.enemies.indexOf(this.enemies[e]);
+//         this.enemies.splice(index, 1);
+//         this.points = this.points + 1;
+//       }
+//     }
+//   }
+// }
+
 _checkEnemyCollisions() { // Cheeck collision with the laser and then delete that enemy from the array
     for (let i = 0; i < this.player.lasers.length; i++){
       for (let e = 0; e < this.enemies.length; e++){
       if (this.player.lasers[i].x < this.enemies[e].x + this.enemies[e].width  && this.player.lasers[i].x + this.player.lasers[i].width  > this.enemies[e].x &&
-		    this.player.lasers[i].y < this.enemies[e].y + this.enemies[e].height && this.player.lasers[i].y + this.player.lasers[i].height > this.enemies[e].y) {
+        this.player.lasers[i].y < this.enemies[e].y + this.enemies[e].height && this.player.lasers[i].y + this.player.lasers[i].height > this.enemies[e].y) {
         const index = this.enemies.indexOf(this.enemies[e]);
+        const laserIndex = this.player.lasers.indexOf(this.player.lasers[i]);
         this.enemies.splice(index, 1);
+        this.player.lasers.splice(laserIndex, 1);
         this.points = this.points + 1;
+        return;
       }
     }
   }
