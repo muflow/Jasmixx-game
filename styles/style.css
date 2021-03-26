@@ -1,28 +1,27 @@
 html,
 body {
     font-size: 16px;
-      background-image: url(../img/bg_code.jpeg);
-      background-repeat: no-repeat;
-      background-size: cover;
+    background-image: url(../img/bg_code.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 canvas {
-    background: rgb(0, 0, 0);
-    border: 1px solid rgb(75, 75, 75);
-    display: block;
+    background: #1d1e22;
+    border: 1px solid #ffffff;
+    /* display: none; */
     margin: 30px auto;
 }
 
 .container {
     margin: 0 auto;
-    width: 500px;
+    width: 600px;
 }
 
 canvas#snake {
     margin: 0 auto;
     border: 1px solid black;
 }
-
 
 .show {
     display: block;
@@ -31,7 +30,7 @@ canvas#snake {
 .splash {
     width: 800px;
     height: 600px;
-    background-image: url('../img/splash-img.jpg');
+    background-image: url("../img/splash-img.jpg");
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -42,13 +41,78 @@ canvas#snake {
 }
 
 button {
-    background-color: green;
+    font-family: monospace;
+    width: 100px;
+    height: 30px;
+    background-color:#1d1e22;
     color: white;
     padding: 0.25rem 0.5rem;
-    border: 1px solid greenyellow;
-    text-transform: uppercase;
+    border: 1px solid #FFFFFF;
+    //text-transform: uppercase;
 }
 
 .mb-2 {
     margin-bottom: 2rem;
 }
+
+#play {
+    margin-bottom: 200px;
+}
+
+
+
+
+
+
+/* html,
+body {
+  font-size: 16px;
+  background-image: url(../img/bg_code.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+canvas {
+  background: rgb(0, 0, 0);
+  border: 1px solid #ffffff;
+  margin: 30px auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 500px;
+}
+
+canvas#snake {
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.show {
+  display: block;
+}
+
+.splash {
+  width: 800px;
+  height: 600px;
+  background-image: url("../img/splash-img.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid greenyellow;
+  text-transform: uppercase;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+} */

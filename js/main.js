@@ -4,17 +4,57 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1.Cargo los elementos que voy a necesitar
   const canvas = document.querySelector('#canvas');
   const ctx = canvas.getContext('2d');
-  const jasmixxGame = new Game({
-    ctx: ctx,
-    canvasWidth: canvas.width
-  });
+
+  const splash = document.getElementById('splash');
+  const gameover = document.getElementById('gameover');
   const game = document.getElementById('game');
-  const startButton = document.querySelector('#start');
+  let jasmixxGame;
+
+  // 2. Función de inicio de juego
+
+  function startGame(){
+    splash.classList.remove("show");
+    splash.classList.add("hide");
+    gameover.classList.remove("show");
+    gameover.classList.add("hide");
+    game.classList.remove("hide");
+    game.classList.add("show");
+
+    jasmixxGame = new Game({
+      ctx: ctx,
+      canvasWidth: canvas.width
+    });
+    jasmixxGame.start();
+  }
+
   const playButton = document.querySelector('#play');
-  const intro = document.getElementById('intro');
+  playButton.addEventListener("click", startGame); 
+
+  const playAgainBtn = document.querySelector('#playagain');
+  playAgainBtn.addEventListener("click", startGame); 
+});
 
 
-  playButton.addEventListener("click", jasmixxGame.start()); 
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   console.log("DOM is loaded");
+
+//   // 1.Cargo los elementos que voy a necesitar
+//   const canvas = document.querySelector('#canvas');
+//   const ctx = canvas.getContext('2d');
+//   const jasmixxGame = new Game({
+//     ctx: ctx,
+//     canvasWidth: canvas.width
+//   });
+//   const game = document.getElementById('game');
+//   const startButton = document.querySelector('#start');
+//   const playButton = document.querySelector('#play');
+//   const intro = document.getElementById('intro');
+
+
+//   playButton.addEventListener("click", jasmixxGame.start()); 
 
 
   // 2.Función para pintar game over en el DOM
@@ -44,5 +84,5 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-});   
+// });   
 
