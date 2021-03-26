@@ -8,7 +8,7 @@ class Player {
     //this.color = '#fecc2b'; //options.color;
     this.lasers = [];
     this.img = new Image();
-    this.img.src = '../img/bald-man.png';
+    this.img.src = 'img/bald-man.png';
     }
 
     _drawPlayer(ctx) {

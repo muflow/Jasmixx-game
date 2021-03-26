@@ -6,7 +6,7 @@ class Laser {
     this.height = 20;
     //this.color = "blue";
     this.img = new Image();
-    this.img.src = '../img/javascript-js-seeklogo.png';
+    this.img.src = 'img/javascript-js-seeklogo.png';
   }
 
   _drawLaser(ctx){

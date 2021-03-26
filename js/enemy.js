@@ -6,7 +6,7 @@ class Enemy {
     this.height = 40;
     //this.color = "white";
     this.img = new Image();
-    this.img.src = '../img/jasmine-purple-logo.svg';
+    this.img.src = 'img/jasmine-purple-logo.svg';
   }
 
   _drawEnemy(ctx){

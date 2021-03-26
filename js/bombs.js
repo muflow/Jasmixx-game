@@ -10,7 +10,7 @@ class Bomb {
         this.lasers = [];
         this.weight = 4;
         this.img = new Image();
-        this.img.src = '../img/red-x-bomb.png';
+        this.img.src = 'img/red-x-bomb.png';
     }
 
     _drawBomb(ctx) {
