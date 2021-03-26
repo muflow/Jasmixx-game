@@ -3,17 +3,23 @@ class Bomb {
     //this.ctx = options.ctx;
         this.x = options.x; //canvas.width/2 - this.width/2;
         this.y = options.y; //canvas.height - this.height - 40;
-        this.radius = 10;
-        this.color = 'red'; //options.color;
+        //this.radius = 10;
+        this.width = 20;
+        this.height = 20;
+        //this.color = 'red'; //options.color;
         this.lasers = [];
         this.weight = 4;
+        this.img = new Image();
+        this.img.src = '../img/red-x-bomb.png';
     }
 
     _drawBomb(ctx) {
-        ctx.fillStyle = 'red';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
+      ctx.drawImage(this.img, this.x, this.y, this.width, this.height);  
+      // ctx.fillStyle = 'red';
+        // ctx.beginPath();
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        // ctx.fill();
     }
 
     _drop(){

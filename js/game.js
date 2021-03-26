@@ -57,9 +57,15 @@ _checkEnemyCollisions() { // Cheeck collision with the laser and then delete tha
 }
 
 _checkBombCollisions(){ // Check bomb collisions with player
+  // for (let i = 0; i < this.bombs.length; i++){
+  //   if(this.player.x < this.bombs[i].x + this.bombs[i].radius  && this.player.x + this.player.width  > this.bombs[i].x &&
+	// 	    this.player.y < this.bombs[i].y + this.bombs[i].radius && this.player.y + this.player.height > this.bombs[i].y){
+  //     this._stopGame();
+  //   }
+  // }
   for (let i = 0; i < this.bombs.length; i++){
-    if(this.player.x < this.bombs[i].x + this.bombs[i].radius  && this.player.x + this.player.width  > this.bombs[i].x &&
-		    this.player.y < this.bombs[i].y + this.bombs[i].radius && this.player.y + this.player.height > this.bombs[i].y){
+    if(this.player.x < this.bombs[i].x + this.bombs[i].width  && this.player.x + this.player.width  > this.bombs[i].x &&
+		    this.player.y < this.bombs[i].y + this.bombs[i].width && this.player.y + this.player.height > this.bombs[i].y){
       this._stopGame();
     }
   }

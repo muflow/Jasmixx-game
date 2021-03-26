@@ -4,12 +4,15 @@ class Enemy {
     this.y = options.y;
     this.width = 40;
     this.height = 40;
-    this.color = "white";
+    //this.color = "white";
+    this.img = new Image();
+    this.img.src = '../img/jasmine-purple-logo.svg';
   }
 
   _drawEnemy(ctx){
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    // ctx.fillStyle = this.color;
+    // ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
 
   _drop(){
